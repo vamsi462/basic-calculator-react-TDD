@@ -1,0 +1,13 @@
+.calculator-container {
+    background-color: #696969;
+    height: 72%;
+    width: 36%;
+}
+
+@media screen and (max-width:1024px) {
+    .calculator-container {
+        height: 100%;
+        width: 100%;
+
+    }
+}
