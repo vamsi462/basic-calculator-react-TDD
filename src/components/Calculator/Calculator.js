@@ -16,9 +16,28 @@ export default class Calculator extends Component {
     }
 
     callOperator =()=> {
-        console.log('call operator')
+        let{displayValue,storedValue,selectedOperator}=this.state;
+        const updateStoredValue = displayValue;
 
+        displayValue= parseInt(displayValue,10);
+        storedValue=parseInt(storedValue,10)
+        switch (selectedOperator) {
+            case '+':
+                displayValue= storedValue+displayValue
+                break;
+        
+            default:
+                displayValue=storedValue
+        }
+        displayValue = displayValue.toString();
+         selectedOperator = '';
+        this.setState({
+            displayValue,
+            storedValue:updateStoredValue,
+            selectedOperator
+        })
     }
+
 
     setOperator =(value)=>{
        let {displayValue,selectedOperator,storedValue }= this.state;
@@ -52,7 +71,7 @@ export default class Calculator extends Component {
         else {
               displayValue === '0' ? (displayValue = value) : (displayValue += value);
           }
-
+        
         this.setState({ displayValue });
     }
 
