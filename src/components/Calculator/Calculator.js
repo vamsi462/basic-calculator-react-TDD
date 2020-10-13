@@ -27,14 +27,20 @@ export default class Calculator extends Component {
     
       updateDisplay = value => {
           let {displayValue}= this.state;
+          //prevent multiple occureance of '.
            if (value === '.' && displayValue.includes('.')){
                 value = '';
            } 
+        
 
-          if (displayValue === ''){
-              displayValue = '0';
-          }
-          else {
+        
+        if(value ==='ce'){
+            //deletes last character of the displayvalue 
+            displayValue = displayValue.substr(0,displayValue.length-1)
+                
+                if (displayValue === '') displayValue = '0' ;    
+        }
+        else {
               displayValue === '0' ? (displayValue = value) : (displayValue += value);
           }
           this.setState({ displayValue });

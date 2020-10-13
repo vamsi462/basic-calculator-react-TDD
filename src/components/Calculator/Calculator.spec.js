@@ -83,4 +83,18 @@ describe('updateDisplay', () => {
         wrapper.instance().updateDisplay('5');
         expect(wrapper.state('displayValue')).toEqual('5');
     })
+
+     it('prevents multiple leading "0"s from displayValue', () => {
+         wrapper.instance().updateDisplay('0');
+         wrapper.instance().updateDisplay('0');
+         expect(wrapper.state('displayValue')).toEqual('0');
+     });
+
+     it('removes the last char of displayValue',()=>{
+        wrapper.instance().updateDisplay('5');
+        wrapper.instance().updateDisplay('0');
+        wrapper.instance().updateDisplay('ce');
+        expect(wrapper.state('displayValue')).toEqual('5');
+            
+     })
 })
