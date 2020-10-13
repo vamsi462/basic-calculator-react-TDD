@@ -7,7 +7,7 @@ import Display from '../Display/Display'
 
 describe('Calculator', () => {
             let wrapper;
-            beforeEach(() => wrapper = shallow( < Calculator / > ))
+            beforeEach(() => wrapper = shallow( < Calculator/> ))
 
             it("should render a <div/>", () => {
                 expect(wrapper.find('div').length).toEqual(1)

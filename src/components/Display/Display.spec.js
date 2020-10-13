@@ -4,7 +4,10 @@ import Display from './Display'
 
 describe('Display',()=>{
     let wrapper;
-    beforeEach(()=> wrapper = shallow(<Display displayValue={''}/>));
+    beforeEach(()=> wrapper = shallow(<Display displayValue={'vamsi'}/>));
+    
+    it('should render correctly',()=>
+     expect(wrapper).toMatchSnapshot())
     
     it('should render a <div/>',()=>{
         expect(wrapper.find('div').length).toEqual(1);
@@ -13,8 +16,9 @@ describe('Display',()=>{
 
     it('renders the value of displayValue',()=>{
         wrapper.setProps({
-            displayValue:'test'
+            displayValue:'vamsi'
         })
-        expect(wrapper.text()).toEqual('test')
+        expect(wrapper.text()).toEqual('vamsi')
     })
+
 });
