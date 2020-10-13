@@ -63,3 +63,13 @@ describe('mounted calculator', () => {
 
      })
 })
+
+
+describe('updateDisplay', () => {
+    let wrapper;
+    beforeEach(()=>wrapper = shallow(<Calculator/>))
+    it('updates displayValue',()=>{
+        wrapper.instance().updateDisplay('9')
+        expect(wrapper.state('displayValue')).toEqual('9')
+    })
+})

@@ -9,7 +9,7 @@ export default class Calculator extends Component {
         displayValue: '0',
         // values to be displayed in number <Keys />
         numbers :['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', '0','ce'],
-        
+
         operators: ['/', 'x', '-', '+'],
         selectedOperator:'',
         storedValue:''
@@ -24,9 +24,12 @@ export default class Calculator extends Component {
         console.log('set operator')
     }
 
-    updateDisplay = ()=>{
-        console.log('update display')
-    }
+    
+      updateDisplay = value => this.setState({
+          displayValue: value
+      });
+    
+
     
 
     render() {
