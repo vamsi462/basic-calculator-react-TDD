@@ -11,31 +11,41 @@
 }
 .operator-key{
     width: 100%;
-    background-color: darkcyan;
+    background-color: #545454;
 }
 
 .operator-key:hover {
-    background-color: #333333;
+    background-color:#2a2a2a;
 }
 .number-key {
-    background-color:#442221;
+    background-color:#696969;
     width: calc(100%/3);
 }
 .number-key:hover {
-    background-color: #564356;
+    background-color:#3f3f3f;
 }
 .submit-key{
-    background-color: #442221;
+    background-color: #aa6e00;
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .submit-key:hover {
-    background-color: #886688;
+    background-color:#1111;
+}
+.submit-container {
+    height: 20%;
+    width: 100%;
 }
 .key-value {
     color: #d3d3d3;
     font-family: 'Orbitron',sans-serif;
+    font-weight: 600;
     font-size: 3em;
-    font-weight: 700;
+}
+
+@media screen and (max-width: 1024px){
+    .key-value{
+        font-size:3em;
+    }
 }
