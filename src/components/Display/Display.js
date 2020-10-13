@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 function Display({displayValue}) {
     return (
         <div className="display-container">
-            hi from display 
+            <p className="display-value">
+                 {displayValue}
+            </p>
+          
         </div>
     )
 }
