@@ -1,0 +1,23 @@
+.display-container {
+    display: flex;
+    align-items: center;
+    background: #1d1f1f;
+    height: 20% ;
+    width: 92%;
+    padding: 0 4%;
+}
+
+.display-value {
+    color: #23e000;
+    margin-left: auto;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 4em;
+   
+}
+
+@media screen and (max-width: 1024px){
+    .display-value{
+        font-size: 10em;
+    }
+}
