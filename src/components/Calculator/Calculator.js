@@ -39,8 +39,13 @@ export default class Calculator extends Component {
             default:
                 displayValue=0
         }
+       
+
         displayValue = displayValue.toString();
-         selectedOperator = '';
+        selectedOperator = '';
+         if (displayValue === 'Infinity') {
+             displayValue = '0';
+         }
         this.setState({
             displayValue,
             storedValue:updateStoredValue,

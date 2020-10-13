@@ -178,4 +178,11 @@ describe('callOperator', () => {
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('1');
      });
+    it('updates displayValue to "0" if operation results in "Infinity"', () => {
+        wrapper.setState({ storedValue: '7' });
+        wrapper.setState({ displayValue: '0' });
+        wrapper.setState({ selectedOperator: '/' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('0');
+  });
 })
