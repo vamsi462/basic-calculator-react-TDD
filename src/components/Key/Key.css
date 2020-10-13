@@ -10,7 +10,30 @@
 .key-container:hover{
     cursor: pointer;
 }
+.operator-key{
+    width: 100%;
+    background-color: darkcyan;
+}
 
+.operator-key:hover {
+    background-color: #333333;
+}
+.number-key {
+    background-color:#442221;
+    width: calc(100%/3);
+}
+.number-key:hover {
+    background-color: #564356;
+}
+.submit-key{
+    background-color: #442221;
+    height: 100%;
+    width: 100%
+}
+
+.submit-key:hover {
+    background-color: #886688;
+}
 .key-value {
     color: #d3d3d3;
     font-family: 'Orbitron',sans-serif;
