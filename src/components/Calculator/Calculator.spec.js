@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    shallow
+    shallow, mount
 } from 'enzyme'
 import Calculator from './Calculator'
 import Display from '../Display/Display'
@@ -28,4 +28,38 @@ describe('Calculator', () => {
             });
 
 
-            });
+});
+
+//spyOn:-Creating a spy using the Jest spyOn;
+//forceUpdate:- to re-render the instance in the test;
+//simulate:- Enzyme's simulated method to  create correspondig key event 
+
+
+describe('mounted calculator', () => {
+    let wrapper;
+    beforeEach(()=>wrapper = mount(<Calculator/>));
+
+    it('calls updatedisplay method when number key is clicked',()=>{
+        const spy = jest.spyOn(wrapper.instance(),'updateDisplay')
+        wrapper.instance().forceUpdate();
+        expect(spy).toHaveBeenCalledTimes(0)
+        wrapper.find('.number-key').first().simulate('click')
+        expect(spy).toHaveBeenCalledTimes(1)
+
+    })
+     it('calls setOperator method when corresponding operator is clicked', () => {
+         const spy = jest.spyOn(wrapper.instance(), 'setOperator')
+         wrapper.instance().forceUpdate();
+         expect(spy).toHaveBeenCalledTimes(0)
+         wrapper.find('.operator-key').first().simulate('click')
+         expect(spy).toHaveBeenCalledTimes(1)
+     })
+     it('calls callOperator when corresponding operator is called',()=>{
+         const spy = jest.spyOn(wrapper.instance(),'callOperator')
+         wrapper.instance().forceUpdate();
+         expect(spy).toHaveBeenCalledTimes(0);
+         wrapper.find('.submit-key').first().simulate('click')
+        expect(spy).toHaveBeenCalledTimes(1);
+
+     })
+})
