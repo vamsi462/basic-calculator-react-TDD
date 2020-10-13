@@ -16,9 +16,9 @@ const operatorKeys = operators.map(operator =><p key={operator}>{operator}</p>)
                  {operatorKeys}
             </div>
             <Key
-            keyaction={callOperator}
-            keyvalue=""
-            keytype=""/>
+            keyAction={callOperator}
+            keyValue=""
+            keyType=""/>
         </div>
     )
 }
