@@ -32,6 +32,9 @@ export default class Calculator extends Component {
             case 'x':
             displayValue = storedValue * displayValue
             break;
+            case '/':
+            displayValue = storedValue / displayValue
+            break;
         
             default:
                 displayValue=0

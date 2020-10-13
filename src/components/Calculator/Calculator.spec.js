@@ -171,4 +171,11 @@ describe('callOperator', () => {
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('9');
      });
+    it('updates displayValue to the quotient of storedValue and displayValue', () => {
+        wrapper.setState({ storedValue: '3' });
+        wrapper.setState({ displayValue: '3' });
+        wrapper.setState({ selectedOperator: '/' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('1');
+     });
 })
