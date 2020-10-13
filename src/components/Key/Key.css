@@ -1,0 +1,19 @@
+.key-container {
+    align-items: center;
+    display: flex;
+    height: 25%;
+    justify-content: center;
+    background-color: darkcyan;
+    transition: background-color 0.3s linear;
+}
+
+.key-container:hover{
+    cursor: pointer;
+}
+
+.key-value {
+    color: #d3d3d3;
+    font-family: 'Orbitron',sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+}

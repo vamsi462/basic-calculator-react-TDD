@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Key.css'
 
-function Key({keyvalue,keytype,keyaction}) {
+function Key({keyValue,keyType,keyAction}) {
     return (
-        <div className="key-container">
-            
+        <div className = {`key-container ${keyType}`} >
+            <p className="key-value">
+                {keyValue}
+            </p>
         </div>
     )
 }
 
 Key.propTypes = {
-    keyaction:PropTypes.func.isRequired,
-    keytype:PropTypes.string.isRequired,
-    keyvalue:PropTypes.string.isRequired
+    keyAction:PropTypes.func.isRequired,
+    keyType:PropTypes.string.isRequired,
+    keyValue:PropTypes.string.isRequired
 
 }
 
