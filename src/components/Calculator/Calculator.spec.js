@@ -63,7 +63,7 @@ describe('mounted calculator', () => {
 
      })
 })
-
+//Update Display Tests
 
 describe('updateDisplay', () => {
     let wrapper;
@@ -107,4 +107,39 @@ describe('updateDisplay', () => {
          expect(wrapper.state('displayValue')).toEqual('0')
      })
 
+})
+
+//Set Operator Tests
+
+describe('setOperator', () => {
+    let wrapper;
+
+    beforeEach(()=>wrapper = shallow(<Calculator/>))
+
+    it("updates the value of the selected operator",()=>{
+        wrapper.instance().setOperator("+");
+        expect(wrapper.state('selectedOperator')).toEqual("+")
+        wrapper.instance().setOperator("*");
+        expect(wrapper.state('selectedOperator')).toEqual("*")
+    })
+    it("updates the value of the storedValue to the displayValue",()=>{
+        wrapper.setState({displayValue:'9'})
+        wrapper.instance().setOperator('+')
+        expect(wrapper.state('storedValue')).toEqual('9')
+    })
+
+    it('updates the value of displayValue to "0"', () => {
+        wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('displayValue')).toEqual('0');
+    });
+     
+    it('selectedOperator is not an empty string, does not update storedValue', () => {
+        wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('storedValue')).toEqual('5');
+        wrapper.instance().setOperator('-');
+        expect(wrapper.state('storedValue')).toEqual('5');
+    });
+     
 })
