@@ -72,4 +72,9 @@ describe('updateDisplay', () => {
         wrapper.instance().updateDisplay('9')
         expect(wrapper.state('displayValue')).toEqual('9')
     })
+    it('concatenates displayValue', () => {
+        wrapper.instance().updateDisplay('5');
+        wrapper.instance().updateDisplay('0');
+        expect(wrapper.state('displayValue')).toEqual('50');
+    });
 })

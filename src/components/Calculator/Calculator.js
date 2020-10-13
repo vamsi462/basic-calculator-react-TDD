@@ -25,10 +25,16 @@ export default class Calculator extends Component {
     }
 
     
-      updateDisplay = value => this.setState({
-          displayValue: value
-      });
-    
+      updateDisplay = value => {
+          let {displayValue}= this.state
+          if (displayValue === ''){
+              displayValue = '0';
+          }
+          else {
+              displayValue === '0' ? (displayValue = value) : (displayValue += value);
+          }
+          this.setState({ displayValue });
+    }
 
     
 
