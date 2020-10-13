@@ -26,7 +26,11 @@ export default class Calculator extends Component {
 
     
       updateDisplay = value => {
-          let {displayValue}= this.state
+          let {displayValue}= this.state;
+           if (value === '.' && displayValue.includes('.')){
+                value = '';
+           } 
+
           if (displayValue === ''){
               displayValue = '0';
           }
