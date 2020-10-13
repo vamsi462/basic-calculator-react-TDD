@@ -5,15 +5,19 @@ import Keypad from '../Keypad/Keypad'
 
 export default class Calculator extends Component {
     state = {
+        // value to be displayed in <Display />
         displayValue: '0',
-        numbers :[],
-        operators:[],
+        // values to be displayed in number <Keys />
+        numbers :['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', '0','ce'],
+        
+        operators: ['/', 'x', '-', '+'],
         selectedOperator:'',
         storedValue:''
     }
 
     callOperator =()=> {
         console.log('call operator')
+
     }
 
     setOperator =()=>{
