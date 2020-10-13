@@ -25,6 +25,9 @@ export default class Calculator extends Component {
             case '+':
                 displayValue= storedValue+displayValue
                 break;
+            case '-':
+            displayValue = storedValue - displayValue
+            break;
         
             default:
                 displayValue=storedValue
