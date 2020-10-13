@@ -3,7 +3,6 @@
     display: flex;
     height: 25%;
     justify-content: center;
-    background-color: darkcyan;
     transition: background-color 0.3s linear;
 }
 
