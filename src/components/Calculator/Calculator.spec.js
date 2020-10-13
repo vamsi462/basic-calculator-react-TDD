@@ -101,5 +101,10 @@ describe('updateDisplay', () => {
          wrapper.instance().updateDisplay('.');
          expect(wrapper.state('displayValue')).toEqual('.');
      })
-     
+
+     it("will set the displaValue to '0' if it is equalt to an empty  string",()=>{
+         wrapper.instance().updateDisplay('ce');
+         expect(wrapper.state('displayValue')).toEqual('0')
+     })
+
 })
