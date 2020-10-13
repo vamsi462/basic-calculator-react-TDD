@@ -94,7 +94,12 @@ describe('updateDisplay', () => {
         wrapper.instance().updateDisplay('5');
         wrapper.instance().updateDisplay('0');
         wrapper.instance().updateDisplay('ce');
-        expect(wrapper.state('displayValue')).toEqual('5');
-            
+        expect(wrapper.state('displayValue')).toEqual('5');     
      })
+     it('prevents multiple occurances of "." in the displaValue', () => {
+         wrapper.instance().updateDisplay('.');
+         wrapper.instance().updateDisplay('.');
+         expect(wrapper.state('displayValue')).toEqual('.');
+     })
+     
 })
