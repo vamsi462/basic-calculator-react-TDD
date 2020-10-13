@@ -34,8 +34,8 @@ const operatorKeys = operators.map(operator =>(
             <div className="submit-container">
                 <Key
                     keyAction={callOperator}
-                    keyValue="submit-key"
-                    keyType="="/>
+                    keyValue="="
+                    keyType = "submit-key"/>
             </div>
             
         </div>
