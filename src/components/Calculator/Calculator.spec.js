@@ -157,11 +157,18 @@ describe('callOperator', () => {
         wrapper.instance().callOperator()
         expect(wrapper.state('displayValue')).toEqual('12')
     })
-     it('updates displayValue to the difference of storedValue and displayValue', () => {
+    it('updates displayValue to the difference of storedValue and displayValue', () => {
         wrapper.setState({ storedValue: '3' });
         wrapper.setState({ displayValue: '2' });
         wrapper.setState({ selectedOperator: '-' });
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('1');
+     });
+    it('updates displayValue to the product of storedValue and displayValue', () => {
+        wrapper.setState({ storedValue: '3' });
+        wrapper.setState({ displayValue: '3' });
+        wrapper.setState({ selectedOperator: 'x' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('9');
      });
 })
