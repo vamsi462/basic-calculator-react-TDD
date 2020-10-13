@@ -4,7 +4,8 @@ import './Key.css'
 
 function Key({keyValue,keyType,keyAction}) {
     return (
-        <div className = {`key-container ${keyType}`} >
+        <div className = {`key-container ${keyType}`} 
+            onClick={()=>keyAction(keyValue)}>
             <p className="key-value">
                 {keyValue}
             </p>
