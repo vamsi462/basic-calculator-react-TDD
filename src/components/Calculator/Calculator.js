@@ -20,8 +20,17 @@ export default class Calculator extends Component {
 
     }
 
-    setOperator =()=>{
-        console.log('set operator')
+    setOperator =(value)=>{
+       let {displayValue,selectedOperator,storedValue }= this.state;
+       if(selectedOperator===""){
+           storedValue =displayValue;
+           displayValue ="0";
+           selectedOperator=value;
+       }
+       else{
+        selectedOperator = value;
+       }
+       this.setState({displayValue,selectedOperator,storedValue})
     }
 
     
@@ -43,7 +52,8 @@ export default class Calculator extends Component {
         else {
               displayValue === '0' ? (displayValue = value) : (displayValue += value);
           }
-          this.setState({ displayValue });
+
+        this.setState({ displayValue });
     }
 
     
