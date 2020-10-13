@@ -43,7 +43,7 @@ export default class Calculator extends Component {
 
         displayValue = displayValue.toString();
         selectedOperator = '';
-         if (displayValue === 'Infinity') {
+         if (displayValue === 'Infinity'||displayValue ==='NaN') {
              displayValue = '0';
          }
         this.setState({

@@ -184,5 +184,12 @@ describe('callOperator', () => {
         wrapper.setState({ selectedOperator: '/' });
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('0');
-  });
+    });
+    it('updates displayValue to "0" if selectedOperator does not match cases', () => {
+        wrapper.setState({ storedValue: '7' });
+        wrapper.setState({ displayValue: '10' });
+        wrapper.setState({ selectedOperator: 'string' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('0');
+    });
 })
