@@ -5,8 +5,23 @@ import Key from '../Key/Key'
 
 function Keypad({callOperator,numbers, operators,setOperator,updateDisplay}) {
 
-const numberKeys = numbers.map(number =><p key={number}>{number}</p>)
-const operatorKeys = operators.map(operator =><p key={operator}>{operator}</p>)
+const numberKeys = numbers.map(number =>(
+    <Key
+        key={number}
+        keyAction={updateDisplay}
+        keyType="number-key"
+        keyValue={number}
+    />)
+);
+
+const operatorKeys = operators.map(operator =>(
+    <Key
+        key={operator}
+        keyAction={setOperator}
+        keyType="operator-key"
+        keyValue={operator}
+    />)
+);
     return (
         <div className="keypad-container">
             <div className="numbers-container">
@@ -15,10 +30,14 @@ const operatorKeys = operators.map(operator =><p key={operator}>{operator}</p>)
             <div className = "operators-container">
                  {operatorKeys}
             </div>
-            <Key
-            keyAction={callOperator}
-            keyValue=""
-            keyType=""/>
+
+            <div className="submit-container">
+                <Key
+                    keyAction={callOperator}
+                    keyValue="submit-key"
+                    keyType="="/>
+            </div>
+            
         </div>
     )
 }
